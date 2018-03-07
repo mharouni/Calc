@@ -5,7 +5,7 @@
  */
 package javaapplication1;
 
-import java.util.Arrays;
+
 
 
 
@@ -15,6 +15,7 @@ import java.util.Arrays;
  * @author Toshoba
  */
 public class Operator {
+    private final String[] history= new String[5];
     
 
    private String Input;
@@ -28,13 +29,38 @@ public class Operator {
     public void setInput(String Input) {
         this.Input = Input;
     }
-    public static String num(String x,String y)
+        public static String[] his(String x,String[] y)
+    {
+       if(y[4].isEmpty() && y[3].isEmpty() && y[3].isEmpty() && y[2].isEmpty() && y[1].isEmpty()
+               && y[1].isEmpty()) y[4]=x;
+       else 
+       {
+           String z;
+           for (int i=4;i>0;i--)
+           {
+               
+               z=y[i];
+               y[i]=x;
+               x=z;
+           }
+               
+       
+       
+       }
+       return y;
+            
+                      
+       
+         
+            
+    }
+    public String num(String x,String y)
     {
         
          
         if(y.isEmpty())
             y = x;
-        // possible error
+        
         else
             y= y.concat(x);
         return y ;
@@ -43,7 +69,7 @@ public class Operator {
  
     public  String operand(String x,String y)
     {
-        if(y.isEmpty())
+        if(y.isEmpty() )
             return "";
         else    
         {
