@@ -15,7 +15,12 @@ package javaapplication1;
  * @author Toshoba
  */
 public class Operator {
-    private final String[] history= new String[5];
+   private  final String[] history= new String[5];
+
+    public String[] getHistory() {
+        return history;
+    }
+    
     
 
    private String Input;
@@ -29,33 +34,20 @@ public class Operator {
     public void setInput(String Input) {
         this.Input = Input;
     }
-        public static String[] his(String x,String[] y)
+        public String[] prev(String x,String[] y)
     {
-       if(y[4].isEmpty() && y[3].isEmpty() && y[3].isEmpty() && y[2].isEmpty() && y[1].isEmpty()
-               && y[1].isEmpty()) y[4]=x;
-       else 
-       {
            String z;
            for (int i=4;i>0;i--)
            {
-               
                z=y[i];
                y[i]=x;
                x=z;
            }
-               
-       
-       
-       }
-       return y;
-            
-                      
-       
-         
-            
+       return y;       
     }
     public String num(String x,String y)
     {
+        
         
          
         if(y.isEmpty())
@@ -66,10 +58,27 @@ public class Operator {
         return y ;
             
     }
+        public  String par(String x,String y)
+    {
+         if(y.isEmpty())
+         {
+            y=y.concat(x);
+            return y;
+         }  
+        if(x.charAt(0)== ')' && y.charAt(y.length()-1)== '(')
+            return "";
+        if(x.charAt(0)== '(' && y.charAt(y.length()-1)== ')')
+            return "";    
+         y=y.concat(x);
+         return y;
+         
+    }
  
     public  String operand(String x,String y)
     {
         if(y.isEmpty() )
+            return "";
+        else if(y.charAt(y.length()-1)== '+' ||y.charAt(y.length()-1)== '-' || y.charAt(y.length()-1)== '*'|| y.charAt(y.length()-1)== '/' || y.charAt(y.length()-1)== '.')
             return "";
         else    
         {
