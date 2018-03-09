@@ -608,7 +608,9 @@ int h=0;
 
     private void eqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eqActionPerformed
         // TODO add your handling code here:
+        
         op.setInput(io.getText());
+        op.prevop(io.getText(), op.getHistoryop());
         io.setText(Double.toString((op.eval(op.getInput()))));
         op.prev(io.getText(), op.getHistory());
         f=false;
@@ -657,7 +659,7 @@ f=true;        // TODO add your handling code here:
             io.setText("");
                 f=true;
             if(h >= 1 )
-                io.setText(op.getHistory()[4]);
+            io.setText(op.getHistoryop()[4] +"="+op.getHistory()[4]);
             else 
             {
                 io.setText("Emty History Slot");
@@ -674,7 +676,7 @@ f=true;        // TODO add your handling code here:
             io.setText("");
                 f=true;
             if(h >= 2 )
-                io.setText(op.getHistory()[3]);
+                io.setText(op.getHistoryop()[3] +"="+op.getHistory()[3]);
             else 
             {
                 io.setText("Emty History Slot");
@@ -688,7 +690,7 @@ f=true;        // TODO add your handling code here:
             io.setText("");
                 f=true;
             if(h >= 3 )
-                io.setText(op.getHistory()[2]);
+                io.setText(op.getHistoryop()[2] +"="+op.getHistory()[2]);
             else 
             {
                 io.setText("Emty History Slot");
@@ -702,7 +704,7 @@ f=true;        // TODO add your handling code here:
             io.setText("");
                 f=true;
             if(h >= 4 )
-                io.setText(op.getHistory()[1]);
+                io.setText(op.getHistoryop()[1] +"="+op.getHistory()[1]);
             else 
             {
                 io.setText("Emty History Slot");
@@ -716,7 +718,7 @@ f=true;        // TODO add your handling code here:
             io.setText("");
                 f=true;
             if(h >= 5 )
-                io.setText(op.getHistory()[0]);
+                io.setText(op.getHistoryop()[1] +"="+op.getHistory()[1]);
             else 
             {
                 io.setText("Emty History Slot");
