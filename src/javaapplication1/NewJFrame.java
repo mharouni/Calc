@@ -729,8 +729,20 @@ f=true;        // TODO add your handling code here:
                                if(!f)
             io.setText("");
         f=true; 
+        int x=0;
+        for(int i=0; i<io.getText().length();i++)
+        {
+            if(io.getText().charAt(i) == '.')
+                x=1;
+        }
+                if(x == 1)
+            io.setText("");
+        
+           
         op.setInput(io.getText());
         op.setInput(op.operand(".", op.getInput()));
+
+       
         if(!op.getInput().isEmpty())
             io.setText(op.getInput());
     }//GEN-LAST:event_jButton12ActionPerformed

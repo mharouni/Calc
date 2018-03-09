@@ -16,6 +16,9 @@ package javaapplication1;
  */
 public class Operator {
    private  final String[] history= new String[5];
+   private  final String[] historyop= new String[5];
+   private String Input;
+   
 
     public String[] getHistory() {
         return history;
@@ -23,7 +26,7 @@ public class Operator {
     
     
 
-   private String Input;
+   
        public Operator() {
         
     }
@@ -44,6 +47,21 @@ public class Operator {
                x=z;
            }
        return y;       
+    }
+           public String[] prevop(String x,String[] y)
+    {
+           String z;
+           for (int i=4;i>0;i--)
+           {
+               z=y[i];
+               y[i]=x;
+               x=z;
+           }
+       return y;       
+    }
+
+    public String[] getHistoryop() {
+        return historyop;
     }
     public String num(String x,String y)
     {
